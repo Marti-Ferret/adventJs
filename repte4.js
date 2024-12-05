@@ -19,8 +19,15 @@ function main() {
 
 
 function createXmasTree(height, ornament) {
-
-
+    let tree = '';
+    for (let i = 1; i <= height; i++) {
+        tree += '_'.repeat(height - i);
+        tree += ornament.repeat(i * 2 - 1);
+        tree += '_'.repeat(height - i) + '\n';
+    }
+    tree += '_'.repeat(height - 1) + '#' + '_'.repeat(height - 1) + '\n';
+    tree += '_'.repeat(height - 1) + '#' + '_'.repeat(height - 1);
+    return tree;
 }
 
 
